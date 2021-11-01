@@ -3,24 +3,31 @@
 require_once('libraries/bdd.php');
 
 $idUser = $_SESSION['id']; 
-var_dump($idUser);
+// var_dump($idUser);
 // var_dump($_SESSION);
 
+
+
 if(isset($_POST["submit"])){
-    
-if(!empty($_POST["titre"]) && !empty($_POST["image"]) && !empty($_POST["prix"])&& !empty($_POST["date"])&& !empty($_POST["heure"])&& !empty($_POST["lieu"])){
-    
 
-    $insert = $bdd->prepare("INSERT INTO salle(nameSalle, imageSalle, prixSalle, dateSalle, heureSalle, lieuSalle, user_iduser) VALUES(?, ?, ?, ?, ?, ?, ?)");
+    // var_dump($_FILES);
 
-    $insert->execute([ $_POST["titre"], $_POST["image"], $_POST["prix"], $_POST["date"], $_POST["heure"], $_POST["lieu"], $idUser]);
+    if(!empty($_POST["titre"]) && !empty($_FILES["image"]) && !empty($_POST["prix"])&& !empty($_POST["date"])&& !empty($_POST["heure"])&& !empty($_POST["lieu"])){
+        // move_upload pour telecharger mon image, tmp_name vu dans var-dump
+        // $_FILES.... DANS var-dump je met les titres dans un tableau
+        // rajouter dans mon formulaire enctype="multipart/form-data
+        move_uploaded_file($_FILES['image'] ['tmp_name'], './upload/'.$_FILES['image'] ['name']);
 
-    header("Location: role.php");
-    
+        $insert = $bdd->prepare("INSERT INTO salle(nameSalle, imageSalle, prixSalle, dateSalle, heureSalle, lieuSalle, user_iduser) VALUES(?, ?, ?, ?, ?, ?, ?)");
 
-}else{
-    $erreur = "<p class='error'> Veuillez remplir les champs ! </p>";
-}
+        $insert->execute([ $_POST["titre"], $_FILES['image'] ['name'], $_POST["prix"], $_POST["date"], $_POST["heure"], $_POST["lieu"], $idUser]);
+
+        header("Location: role.php");
+        
+
+    }else{
+        $erreur = "<p class='error'> Veuillez remplir les champs ! </p>";
+    }
 
 }
 
@@ -43,7 +50,7 @@ $resultat = $select->fetchAll();
     
     <h2>Ajouter une salle</h2>
 
-        <form action="" method="POST">
+        <form action="" method="POST"  enctype="multipart/form-data" >
             <input type="text" placeholder="ajouter le nom de la salle" name="titre">
             <input type="file" placeholder="ajouter une image" name="image">
             <input type="text" placeholder="ajouter le prix" name="prix">

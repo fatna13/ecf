@@ -42,6 +42,7 @@ require_once('libraries/bdd.php');
         <div class="col-md-12">
           <div class="content-panel">
             <h4><i class="fa fa-angle-right"></i> Réservations salles</h4>
+            <h4><i class="fa fa-angle-right"></i><a href="deconnexion.php"> Déconnexion</a></h4>
             <hr>
            
 
@@ -64,7 +65,7 @@ require_once('libraries/bdd.php');
                   <th>Date</th>
                   <th>Heure</th>
                   <th>Lieu</th>
-                  <th></th>
+                  <th>ID User</th>
                   <th> Modifier</th>
                   <th> Supprimer </th>
                 </tr>
@@ -80,7 +81,7 @@ require_once('libraries/bdd.php');
                     <tr>
                         <td><?= $reservation["idsalle"]?></td>
                         <td><?= $reservation["nameSalle"]?></td>
-                        <td><?= $reservation["imageSalle"]?></td>
+                        <td><img src="./upload/<?= $reservation["imageSalle"]?>" alt="b" width=70 height=70></td>
                         <td><?= $reservation["prixSalle"]?></td>
                         <td><?= $reservation["dateSalle"]?></td>
                         <td><?= $reservation["heureSalle"]?></td>

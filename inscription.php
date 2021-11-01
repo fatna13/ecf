@@ -41,7 +41,7 @@ if(isset($_POST['inscription'])) {
                             $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
                             $mdp2 = password_hash($_POST['confirmPassword'], PASSWORD_DEFAULT);
 
-                            $insertMembre = $bdd->prepare("INSERT INTO user (nameUser, emailUser,mdpUser, roleUser) VALUES (?,?,?,?)");
+                            $insertMembre = $bdd->prepare("INSERT INTO user (nameUser, emailUser, mdpUser, roleUser) VALUES (?,?,?,?)");
                             $insertMembre->execute(array($pseudo,$mail,$mdp,2));
                             
                             header("Location: connexion.php");
@@ -89,18 +89,21 @@ if(isset($_POST['inscription'])) {
     
     <div class="entete" id="header">
         
+        <img src="image/logo2.png" alt="logo" class="logo">
+    
         <a href="index.php">Accueil</a>
-        <a href="inscription.php">Inscription</a>
-        <a href="connexion.php">Connexion</a>
-        
+        <a href="index.php">A propos de nous</a>
+        <a href="contact.php">Contact</a>
+        <a href="connexion.php">Espace client</a>
     </div>
+
 
     <div class="container">
         
-    
+        <h1>Inscription</h1>
                 
-        <form  action="" method="POST">
-            <p>Bienvenue</p>
+        <form  class="inscription" action="" method="POST">
+            <h3>Bienvenue</h3>
             <input type="pseudo" name="pseudo" placeholder="Pseudo" ><br>
             <input type="email" name="mail" placeholder="Email" ><br>
             <input type="password" name="mdp" placeholder="Mot de passe"><br>
@@ -109,17 +112,11 @@ if(isset($_POST['inscription'])) {
             
         </form>
 
-            <!-- shadow -->
-        <!-- <div class="drop drop-1"></div>
-        <div class="drop drop-2"></div>
-        <div class="drop drop-3"></div>
-        <div class="drop drop-4"></div>
-        <div class="drop drop-5"></div> -->
     </div>
 
     <?php
          if(isset($erreur)) {
-            echo '<font color="black">'.$erreur.'</font>';
+            echo '<font color="black" p-3>'.$erreur.'</font>';
          }
     ?>
 

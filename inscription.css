@@ -4,61 +4,59 @@
 }
 
 .entete{
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    align-items: center;
-    height: 60px; 
-    width: 100%;
-    background: #C7C5C5;
-    font-size: 20px;
-    z-index:1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90px; 
+  padding : 5px; 
 }
 
 .entete a{
-    text-decoration:none;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    transition: .5s all;
+  text-decoration:none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: .5s all;
+  color: #bdb589;
 }
 
 .entete a:hover{
-    background: white;
-    transition: 0.3s all;
+  background: white;
+  transition: 0.3s all;
 
 }   
 
-body {
-    background: linear-gradient(45deg, #FC466B, #3F5EFB);
-    height: 100vh;
-    font-family: arial, sans-serif;
-   
+.logo{
+  /* border-radius: 60px; */
+  width: 150px;
+  height: 150px;
+  /* margin-top: 50px; */
 }
-  
+
 .container {
-    display: flex;
+    height: 90vh; 
+    margin: auto;
+    display: grid;
     align-items: center;
     justify-content: center;
-    position: relative; 
-    margin-top: 100px;
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
     background: rgba(255, 255, 255, .3);
     padding: 3rem;
     height: 400px;
     border-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, .3);
     border-top: 1px solid rgba(255, 255, 255, .3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    -moz-backdrop-filter: blur(10px);
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
     text-align: center;
 }
 
-p {
-    color: white;
+h3 {
+    color: black;
     font-weight: 500;
     opacity: .7;
     font-size: 1.4rem;
@@ -66,19 +64,6 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
   }
     
-.container a {
-    text-decoration: none;
-    color: #ddd;
-    font-size: 12px;
-    transition: all .3s;
-    
-}
-  
-/* .container a:hover {
-    text-shadow: 20px 20px 30px rgba(0, 0, 0);
-} */
-  
-
 
 input {
     background: transparent;
@@ -88,32 +73,23 @@ input {
     padding: 1rem;
     width: 200px;
     border-radius: 50px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    -moz-backdrop-filter: blur(5px);
     box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
-    color: white;
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
-    transition: all .3s;
-    margin-bottom: 2em;
   }
 
 input:hover,
 input[type="email"]:focus,
 input[type="password"]:focus{
-  background: rgba(255,255,255,0.1);
-  box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
 }
     
 input[type="button"] {
-  margin-top: 10px;
-  width: 150px;
-  font-size: 1rem;
-  cursor: pointer;
+    margin-top: 10px;
+    width: 150px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-::placeholder {
-  color: #fff;
-}
 

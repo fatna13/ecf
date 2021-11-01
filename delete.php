@@ -9,6 +9,6 @@
         $sup = $bdd->prepare("DELETE FROM salle WHERE idsalle = ?");
         $sup->execute([$id]);
 
-        header("Location: role.php?msg=l'article a bien été supprimé");
+        header("Location: role.php?msg=la salle a bien été supprimé");
 
 ?>    
