@@ -38,7 +38,8 @@ require_once('libraries/bdd.php');
     </div>
 <section>
     <div class="central">
-    <p class="oneLine">Tableau de bord > <span class="span"> Mon profil</span></p>
+    <p class="oneLine">Tableau de bord > <span class="span"> Mon profil > </span></p>
+    <p><a href="deconnexion.php">Déconnexion</a></p>
         <!-- <div class="container"> -->
            
 

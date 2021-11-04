@@ -60,7 +60,9 @@ if(isset($_POST['submit']))
         <div class="contact">
             <h1>Room'13</h1>
             <p>2 Rue du chateau de l'horloge</p>
+            <p>13090 Aix en provence</p>
             <p>06.89.52.89.58</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.7787218533454!2d5.414389215493675!3d43.52780687912578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98d6ac411cc53%3A0x80e6bf2dceefef46!2s2%20Rue%20Ch%C3%A2teau%20de%20l&#39;Horloge%2C%2013090%20Aix-en-Provence!5e0!3m2!1sfr!2sfr!4v1635851887566!5m2!1sfr!2sfr" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <div class="form">

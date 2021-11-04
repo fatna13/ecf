@@ -26,28 +26,7 @@
             <a href="connexion.php">Espace client</a>
     </div>
 
-    
-
-    <!-- <div class="carousel">
-        <div class="slides1">
-            <img name="slide" src="image/PLAY.jpg">
-        </div> -->
-        <!-- <div class="slides2">
-            <img src="image/holidays.jpg" alt="hollydays" class="slide">
-        </div>
-
-        <div class="slides3">    
-            <img src="image/PLAY.jpg" alt="play" class="slide">
-        </div> -->
-        <!-- <div class="controls">
-            <div class="control prev-slide">&#9668;</div>
-            <div class="control next-slide">&#9658;</div>
-        </div> -->
-    <!-- </div> -->
-
     <section class="one">
-
-
         <h1> La meilleure salle pour vous retrouver et travailler en toute tranquilité </h1>
         <div class="filter">
             <form action="" method="post" class="contenu">
@@ -61,10 +40,7 @@
                 </div>
                 <button type="submit" class="input-one"> <i class="fa fa-search"></i> </button>
             </form>
-            
         </div>
-        
-
     </section>
 
     
@@ -76,7 +52,7 @@
             Venez découvrir nos lieux convivial, originaux, et apaisant.
             Toutes les salles de réunions sont entièrement équipées de technologies de qualité et de mobilier moderne et confortable.
             </p>
-            <button><a href="">Contactez-nous</a></button> 
+            <button><a href="contact.php">Contactez-nous</a></button> 
         <!-- </div> -->
     </div>
    
