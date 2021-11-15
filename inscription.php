@@ -1,6 +1,6 @@
 <?php
 
-require_once('libraries/bdd.php');
+require_once('include/bdd.php');
 
 
 
@@ -14,9 +14,9 @@ if(isset($_POST['inscription'])) {
      $mdp = $_POST['mdp'];
      $mdp2 =$_POST['confirmPassword'];
 
-   if(!empty($pseudo) AND !empty($mail) AND !empty($mdp) AND !empty($mdp2)) {
+    if(!empty($pseudo) AND !empty($mail) AND !empty($mdp) AND !empty($mdp2)) {
    
-
+    //  strlen retourne la longueur d'une chaîne de caractères, c'est-à-dire le nombre de lettres et de chiffres dont elle est constituée (espaces compris) 
     $pseudolength = strlen($pseudo);
       if($pseudolength <= 255) {
         
@@ -77,41 +77,30 @@ if(isset($_POST['inscription'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="inscription.css">
+    <link rel="stylesheet" href="css/inscription.css">
 </head>
 <body>
-    
-    <div class="entete" id="header">
-        
-        <img src="image/logo2.png" alt="logo" class="logo">
-    
-        <a href="index.php">Accueil</a>
-        <a href="index.php">A propos de nous</a>
-        <a href="contact.php">Contact</a>
-        <a href="connexion.php">Espace client</a>
-    </div>
+
+    <!-- inclusion de l'entête  -->
+    <?php require_once('include/header.php');?> 
 
 
     <div class="container">
-        
-        <h1>Inscription</h1>
-                
+        <h1>Inscription</h1>      
         <form  class="inscription" action="" method="POST">
             <h3>Bienvenue</h3>
             <input type="pseudo" name="pseudo" placeholder="Pseudo" ><br>
             <input type="email" name="mail" placeholder="Email" ><br>
             <input type="password" name="mdp" placeholder="Mot de passe"><br>
-            <input type="password" name="confirmPassword" placeholder="Confirm password"><br>
-            <input type="submit" value="S'inscrire" name="inscription"><br>
-            
+            <input type="password" name="confirmPassword" placeholder="Confirme mdp"><br>
+            <input type="submit" value="S'inscrire" name="inscription"><br>  
         </form>
-
     </div>
 
     <?php
@@ -119,6 +108,10 @@ if(isset($_POST['inscription'])) {
             echo '<font color="black" p-3>'.$erreur.'</font>';
          }
     ?>
+
+<!-- inclusion du bas de page du site  -->
+
+<?php require_once('include/footer.php');?>
 
 </body>
 </html>

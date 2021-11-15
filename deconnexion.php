@@ -1,7 +1,6 @@
 <?php
     session_start();
     $_SESSION = array();
-    // mettre fin au système de sessions
-    session_destroy();
+    session_destroy();// On détruit la session : l'utilisateur n'est plus connecté !
     header("Location: connexion.php");
 ?>

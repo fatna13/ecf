@@ -1,0 +1,213 @@
+body {
+    color: #797979;
+	background: #eaeaea;
+    font-family: 'Ruda', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    font-size:13px;
+}
+
+.vide{
+    background: beige;
+}
+ul li {
+    list-style: none;
+}
+
+ul{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/*sidebar navigation*/
+
+#sidebar {
+    width: 210px;
+    height: 100%;
+    position: fixed;
+    background: #2f323a;
+}
+
+.sub-menu{
+    margin-top: 50px;
+}
+.sub-menu a{
+    padding-left: 32px;
+}
+
+
+#sidebar ul li {
+    position: relative;
+
+}
+
+#sidebar .sub-menu > .sub li  {
+    padding-left: 32px;
+
+}
+
+.connexion{
+    padding-left: 50px;
+    padding-top: 100px ;
+}
+
+#sidebar .sub-menu  {
+    padding-bottom: 10px;
+}
+
+#main-content{
+    display: flex;
+}
+
+#main-content h3{
+    margin-left: 40px;
+}
+
+#main-content h4{
+    margin-left: 60px;
+    }
+
+.table{
+    width: 80%;
+    
+    margin-left: 200px;
+}
+
+#main-content .ajout {
+    background:#a5dca5;
+     margin-left: 30%; 
+    
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    width: 40%;
+}
+#main-content a{
+    color: black;
+}
+
+.tdcontenu{
+    width: 300px !important;
+}
+
+.table .changement :hover{
+    color: blue !important;
+    font-weight: bold !important;
+}
+
+thead{
+    background-color: #a5dca5;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    border-collapse: collapse;
+
+    
+}
+
+th{
+    margin-bottom: 15px;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    /* border-collapse: collapse; */
+
+}
+
+td{
+    text-align: center;
+    height: 60px;
+    font-size: 15px;
+    /* border-collapse: collapse; */
+}
+
+
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+        /* Safari and Chrome */
+        
+
+    /*--sidebar toggle---*/
+
+    .sidebar-toggle-box {
+        float: left;
+        padding-right: 15px;
+        margin-top: 20px;
+        height: 20em;
+    }
+
+    .sidebar-toggle-box .fa-bars {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 20px;
+    }
+
+
+    .sidebar-closed > #sidebar > ul {
+        display: none;
+    }
+
+    .sidebar-closed #main-content {
+        margin-left: 0px;
+    }
+
+    .sidebar-closed #sidebar {
+        margin-left: -180px;
+    }
+
+
+    ul li {
+        list-style: none;
+    }
+
+
+
+    /*fontawesome*/
+    .fontawesome-icon-list h2 {
+        margin-top: 0;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .fontawesome-icon-list .col-sm-4, .fontawesome-icon-list .col-md-3, .fontawesome-icon-list .col-xs-6 {
+        margin-bottom: 10px;
+    }
+
+    .fontawesome-icon-list .page-header {
+        border-bottom: 1px solid #C9CDD7;
+    }
+
+    .fontawesome-icon-list a {
+        color: #797979;
+    }
+
+    .fontawesome-icon-list a:hover{
+        color: #35404D;
+    }
+
+    .fontawesome-icon-list i {
+        font-size: 16px;
+        padding-right: 10px;
+    }
+
+    #web-application, #text-editor, #directional, #video-player, #brand, #medical, #currency {
+        margin-top: 10px;
+    }
+
+}

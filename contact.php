@@ -1,11 +1,13 @@
 <?php
 
- require_once('libraries/bdd.php');
+ require_once('include/bdd.php');
 
 if(isset($_POST['submit']))
 {
     if(!empty($_POST['firstname']) AND !empty($_POST['sujet']) AND !empty($_POST['email']) AND !empty($_POST['message']))
 	{
+        
+        // Version du format MIME utilisé
 		$header="MIME-Version: 1.0\r\n";
 		$header.='From:"VOTRE NOM"<email-expediteur@example.org>'."\n";
 		$header.='Content-Type:text/html; charset="uft-8"'."\n";
@@ -24,7 +26,7 @@ if(isset($_POST['submit']))
 		</html>
 		';
 
-		mail("fatnabel13090@gmail.com", "CONTACT - Room'13.com", $message, $header);
+		mail("taftaf5@hotmail.fr", "CONTACT - Room'13.com", $message, $header);
 		$msg="Votre message a bien été envoyé !";
 	}
 	else
@@ -35,26 +37,18 @@ if(isset($_POST['submit']))
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body>
 
-    <div class="entete" id="header">    
-        
-        <img src="image/logo2.png" alt="logo" class="logo">
-    
-        <a href="index.php">Accueil</a>
-        <a href="index.php">A propos de nous</a>
-        <a href="index.php">Contact</a>
-        <a href="connexion.php">Espace client</a>
-    </div>
+    <?php require_once('include/header.php');?>
 
     <div class="middle">
         <div class="contact">
@@ -90,40 +84,10 @@ if(isset($_POST['submit']))
                     echo $msg;
                 }
 		    ?>
-
         </div>
-        
-
-    
-
     </div>
-</div>
 
-    <footer>
-        <div class="footer-bloc">
-                <div class="picture">
-                    <a href="#"><img src="image/logo2.png" alt="logo_footer" class="logo"></a>
-                </div>
-                <div class="a-propos">
-                    <div class="par2">
-                        <ul>À propos de nous
-                            <li><a href="#">Qui sommes nous</a></li>
-                            <li><a href="#">Nous contacter</a></li>
-                        </ul>
-                    </div>
-                </div>
-        
-                    
-            <div class="conteneur7">
-                <div class="mentions">
-                    <p><a href="#">Mentions légales</a></p>
-                </div>
-                <div class="mentions">
-                    <p><a href="#">Politique de confidentialité</a></p>
-                </div>
-               
-            </div>
-            
-        </div>
-    </footer>
+
+<?php require_once('include/footer.php');?>
+
 </body>

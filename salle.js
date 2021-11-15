@@ -1,19 +1,16 @@
  
-var i = 0;
-var images = ['image/happy.jpg', 'image/holidays.jpg', 'image/PLAY.jpg'] ;
-var time = 2000;
+// burger
 
-function changeImg(){
+let burgerMenu = function(){
+  let burger = document.querySelector(".burger");
+  let menuresponsive = document.querySelector(".menuresponsive");   
 
-document.slide.src = images[i];
-
-if (i < images.length - 1) {
-  i++;
-} else {
-  i = 0;
+  burger.addEventListener("click", function(){
+      console.log("hello")
+      menuresponsive.classList.toggle("burger-active");
+      burger.classList.toggle("toggle");
+  })
 }
-setTimeout("changeImg()", time);
-}
-window.onload = changeImg;
+burgerMenu();
 
 

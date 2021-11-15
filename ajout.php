@@ -1,6 +1,6 @@
 <?php
 
-require_once('libraries/bdd.php');
+require_once('include/bdd.php');
 
 $idUser = $_SESSION['id']; 
 // var_dump($idUser);
@@ -12,15 +12,15 @@ if(isset($_POST["submit"])){
 
     // var_dump($_FILES);
 
-    if(!empty($_POST["titre"]) && !empty($_FILES["image"]) && !empty($_POST["prix"])&& !empty($_POST["date"])&& !empty($_POST["heure"])&& !empty($_POST["lieu"])){
+    if(!empty($_POST["titre"]) && !empty($_FILES["image"]) && !empty($_POST["prix"])&& !empty($_POST["first"])&& !empty($_POST["last"])&& !empty($_POST["lieu"])){
         // move_upload pour telecharger mon image, tmp_name vu dans var-dump
         // $_FILES.... DANS var-dump je met les titres dans un tableau
         // rajouter dans mon formulaire enctype="multipart/form-data
         move_uploaded_file($_FILES['image'] ['tmp_name'], './upload/'.$_FILES['image'] ['name']);
 
-        $insert = $bdd->prepare("INSERT INTO salle(nameSalle, imageSalle, prixSalle, dateSalle, heureSalle, lieuSalle, user_iduser) VALUES(?, ?, ?, ?, ?, ?, ?)");
+        $insert = $bdd->prepare("INSERT INTO salle(nameSalle, imageSalle, prixSalle, début, fin, lieuSalle, user_iduser) VALUES(?, ?, ?, ?, ?, ?, ?)");
 
-        $insert->execute([ $_POST["titre"], $_FILES['image'] ['name'], $_POST["prix"], $_POST["date"], $_POST["heure"], $_POST["lieu"], $idUser]);
+        $insert->execute([ $_POST["titre"], $_FILES['image'] ['name'], $_POST["prix"], $_POST["first"], $_POST["last"], $_POST["lieu"], $idUser]);
 
         header("Location: role.php");
         
@@ -39,7 +39,7 @@ $resultat = $select->fetchAll();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,8 +54,8 @@ $resultat = $select->fetchAll();
             <input type="text" placeholder="ajouter le nom de la salle" name="titre">
             <input type="file" placeholder="ajouter une image" name="image">
             <input type="text" placeholder="ajouter le prix" name="prix">
-            <input type="text" placeholder="ajouter une date" name="date">
-            <input type="text" placeholder="ajouter l'heure" name="heure">
+            <input type="text" placeholder="ajouter le début" name="first">
+            <input type="text" placeholder="ajouter la fin" name="last">
             <input type="text" placeholder="ajouter le lieu" name="lieu">
             <input type="submit" name="submit">
         </form> 
@@ -67,3 +67,7 @@ $resultat = $select->fetchAll();
 
                
     ?>
+
+
+</body>
+</html>

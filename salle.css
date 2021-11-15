@@ -1,26 +1,27 @@
 * {
     margin: 0;
     padding:0;
-    /* box-sizing: border-box;  */
+    
 }
 
-.entete{
+header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 90px; 
     padding : 5px; 
 }
 
-.entete a{
+header a{
     text-decoration:none;
     text-transform: uppercase;
     letter-spacing: 4px;
     transition: .5s all;
     color: #bdb589;
+    font-weight: bold;
+    font-size: 25px;
 }
 
-.entete a:hover{
+header a:hover{
     background: white;
     transition: 0.3s all;
 
@@ -33,8 +34,57 @@
     /* margin-top: 50px; */
 }
 
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+                                    /* burger */
+.burger{
+    display:none;
+    margin-right: 15px;
+}
+
+.burger div{
+
+    width: 25px;
+    height: 3px;
+    background:#bdb589;
+    margin:5px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    
+}
+
+/* bascule */
+.toggle .spantop{
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+.toggle .spanmiddle{
+    opacity:0;
+}
+.toggle .spanbottom{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.burger-active{
+    transform: translateY(0) ; 
+    display: block;
+}
+
+.menuresponsive{
+    display:none;
+    width: 60%;
+    flex-direction: column;
+    
+}
+
+
 section h1{
     color:black;
+    padding: 100px;
     text-align: center;
     font-family: "Playfair Display",serif;
     font-size: 40px;
@@ -44,7 +94,6 @@ section h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
     width: 100%;
     height: 450px;
     margin: auto;
@@ -88,39 +137,14 @@ input{
     border-radius: 10px;
 }
 
-/* .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 100%;
-    flex-wrap: wrap;
-    padding-top: 500px;
-   
-}
-.container img{
-    object-fit: cover;
-    height: 300px;
-    width: 300px;
-    border-radius: 15px;
-    margin: 20px;
-} */
-
-/* .container h1{
-   text-align: center; 
-   color: #343DFA;
-} */
-
 section{
-    background-image: url(image/round-table.jpg);
-    background-position-y: center;
-    /* filter: grayscale(60%); */
+    background-image: url(image/round-table2.png);
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
     height: 600px;
     box-shadow: 10px 5px 5px grey;
-    width: auto;
-    object-fit: cover;
-    opacity: 0.8;
+    
 }
                     /* bloc2 */
 .second{
@@ -145,27 +169,8 @@ section{
     margin: auto;
 }
 
-/* .room {
-    
-    margin: 20px;
-    display: flex;
-    flex-direction:column ;
-    align-items: center;
-    
-} */
 
-/* .btn{
-    text-align: center;
-    border-radius: 40px;
-    font-size: 20px;
-    width: 300px;
-    margin: 20px;
-    height: 60px;
-    background: #D8D7D7;
-} */
-
-/* page profil */
-.contenu_profil{
+/* .contenu_profil{
     background: #D8D7D7;
     width: 15%;
     height: 93.8vh;
@@ -174,7 +179,7 @@ section{
     align-items:center;
     justify-content:center;
 
-}
+} */
 
 a{
     text-decoration:none;
@@ -193,80 +198,7 @@ a:hover{
     height:140px;
 }
 
-
-/* body { */
-  /* background: #3e3e3e; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-} */
-
-/* .carousel img{
-    width: 100%; */
-  /* height: $carousel-height; */
-    /* height: 60%;
-    top:44%;
-    left:50%; 
-    transform: translate(-50%, -50%); */
-  /* overflow: hidden; */
-    /* position: absolute; */
-    /* border-radius: 15px; */
-    /* object-fit: cover; */
-    /* opacity: 0.2; */
-/* } */
-/* .carousel :hover {
-    opacity: 1;
-}  */
-  
-/* .controls {
-    opacity: 0;
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 99999;
-    transition: all ease 0.5s;
-  } */
-    
-    /* .control {
-      margin: 0 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.7);
-      opacity: .5;
-      transition: ease .3s;
-      cursor: pointer;
-      
-      &:hover {
-        opacity: 1;
-      }
-    
-  
-   */
-
-
-/* .slides {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      display: flex;
-      width: 100%;
-      transition: 1s ease-in-out all;
-    }
-      
-.slide {
-        min-width: 100%;
-        /* min-height: $carousel-height; */
-        /* height: auto;
-}  */ 
+                                        /* FOOTER */
 
 .footer-bloc{
     display: flex;
@@ -276,14 +208,102 @@ a:hover{
     align-items: center;
 }
 
-.a-propos li{
-    list-style-type: none;
+footer p{
+  padding: 15px;  
 }
 
-/* .conteneur7{
-    flex-direction: row;
-    justify-content: center;
-} */
+.a-propos ul, li{
+    list-style-type: none;
+    font-size: 20px;
+    padding: 5px;
+}
+
+                                               /*File apropos*/
+
+main{
+    padding: 20px;
+}
+
+main p{
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 685px) {
+    /* header{
+        height: 60%;
+    } */
+    nav ul{
+        display: none;
+    }
+
+    .burger{
+        display: block;
+    } 
+
+    .burger-active{
+        display: flex;
+    }  
+    
+    .menuresponsive a {
+        text-decoration: none;
+        width: 70%;
+        color: #bdb589;
+        font-size: 1rem;
+    }
+
+    
+    section{
+        width: 100%;
+    }
+
+    section h1{
+        padding: 10px;
+    }
+    .contenu{
+        display: flex;
+        flex-direction: column;
+    }
+    footer{
+        width: 100%;
+    }
+
+    footer li, a{
+        font-size: 15px;
+    }
+    main{
+       height: 50%;
+       
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    header{
+        width: 100%;
+    }
+    
+    section{
+        width: 100%;
+    }
+
+    section h1{
+        padding: 10px;
+    }
+    .contenu{
+        display: flex;
+        flex-direction: column;
+    }
+    footer{
+        width: 100%;
+    }
+
+    footer li, a{
+        font-size: 15px;
+    }
+
+  }
 
 
 

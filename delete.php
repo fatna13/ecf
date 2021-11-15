@@ -1,6 +1,6 @@
 <?php
 
-    require_once('libraries/bdd.php');
+    require_once('include/bdd.php');
 
 
    

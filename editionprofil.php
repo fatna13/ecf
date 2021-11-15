@@ -1,6 +1,6 @@
 <?php
 
-require_once('libraries/bdd.php');
+require_once('include/bdd.php');
  
 if(isset($_SESSION['id'])) {
    $requser = $bdd->prepare("SELECT * FROM user WHERE idUser = ?");
@@ -22,12 +22,15 @@ if(isset($_SESSION['id'])) {
    
    
 ?>
-<html>
+<html lang="fr">
    <head>
       <title>ModifProfil</title>
       <meta charset="utf-8">
    </head>
    <body>
+
+      <?php require_once('include/header.php');?>
+
       <div >
          <h2>Modifier mon profil</h2>
          <div >
@@ -38,10 +41,13 @@ if(isset($_SESSION['id'])) {
                <input type="text" name="email" placeholder="email" value="<?php echo $user['emailUser']; ?>" /><br /><br />
                
                <input type="submit" value="Mettre à jour mon profil !" />
+               
             </form>
             <?php if(isset($msg)) { echo $msg; } ?>
          </div>
       </div>
+      
+      <?php require_once('include/footer.php');?>
    </body>
 </html>
 <?php   

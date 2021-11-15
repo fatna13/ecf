@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding:0;
+    
+}
+
+.entete{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px; 
+    padding : 5px; 
+}
+
+.entete a{
+    text-decoration:none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: .5s all;
+    color: #bdb589;
+}
+
+.entete a:hover{
+    background: white;
+    transition: 0.3s all;
+
+}   
+
+.logo{
+    width: 150px;
+    height: 150px;
+}
+
+section {
+    padding: 50px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.condition{
+    height: 170vh;
+}
+
+.footer-bloc{
+    display: flex;
+    justify-content: space-between;
+    background: #bdb589;
+    padding: 20px;
+    align-items: center;
+}
+
+
+
+.a-propos ul, li{
+    list-style-type: none;
+    font-size: 20px;
+}
+
+a{
+    text-decoration:none;
+    color: black;
+    margin-top: 15px;
+    font-size: 20px;
+}

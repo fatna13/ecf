@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding:0;
+    
+}
+
+body {
+    background: rgb(255, 252, 246);
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding : 5px; 
+}
+
+header a{
+    text-decoration:none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: .5s all;
+    color: #bdb589;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+header a:hover{
+    background: white;
+    transition: 0.3s all;
+
+}   
+
+.logo{
+    /* border-radius: 60px; */
+    width: 150px;
+    height: 150px;
+    /* margin-top: 50px; */
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+                                    /* burger */
+.burger{
+    display:none;
+    margin-right: 15px;
+}
+
+.burger div{
+
+    width: 25px;
+    height: 3px;
+    background:#bdb589;
+    margin:5px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    
+}
+
+/* bascule */
+.toggle .spantop{
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+.toggle .spanmiddle{
+    opacity:0;
+}
+.toggle .spanbottom{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.burger-active{
+    transform: translateY(0) ; 
+    display: block;
+}
+
+.menuresponsive{
+    display:none;
+    width: 60%;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* text-align: center; */
+}
+
+.oneLine{
+    margin-left: 66px;
+    color: #bdb589;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.oneLine a{
+    color: #bdb589;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form {
+    padding: 90px;
+}
+
+form input {
+    text-align: center;
+    height: 30px;
+    border-radius: px;
+}
+
+
+
+@media screen and (max-width: 685px) {
+    nav ul{
+        display: none;
+    }
+
+    .burger{
+        display: block;
+    } 
+
+    .burger-active{
+        display: flex;
+    }  
+    
+    .menuresponsive a {
+        text-decoration: none;
+        width: 70%;
+        color: #bdb589;
+        font-size: 1rem;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
